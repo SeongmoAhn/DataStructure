@@ -40,7 +40,7 @@ public:
         cout << "큐 내용 : ";
         int maxIdx = (front < rear) ? rear : rear + MAX_QUEUE_SIZE;
         for (int i = front + 1; i <= maxIdx; i++) {
-            cout << '[' << data[i] << ']' << ' ';
+            cout << '[' << data[i % MAX_QUEUE_SIZE] << ']' << ' ';
         }
         cout << endl;
     }
