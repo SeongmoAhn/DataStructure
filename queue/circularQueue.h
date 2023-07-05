@@ -17,7 +17,7 @@ public:
     bool isEmpty() { return front == rear; }
     bool isFull() { return ((rear + 1) % MAX_QUEUE_SIZE) == front; }
 
-    void enqnene(int x) {
+    void enqueue(int x) {
         if (isFull()) errorPrint("Queue overflow");
 
         rear = (rear + 1) % MAX_QUEUE_SIZE;
