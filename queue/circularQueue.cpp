@@ -4,7 +4,7 @@
 int main() {
     CircularQueue queue;
     for (int i = 1; i < 10; i++) {
-        queue.enqnene(i);
+        queue.enqueue(i);
     }
     queue.display();
 
