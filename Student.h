@@ -18,6 +18,6 @@ public:
     }
 
     void display() {
-        cout << "학번 : " << id << "이름 : " << name << "학과 : " << dept << endl;
+        cout << "학번 : " << id << "  " << "이름 : " << name << "  " << "학과 : " << dept << endl;
     }
 };
