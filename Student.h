@@ -5,6 +5,7 @@
 using namespace std;
 
 class Student {
+protected:
     int id; // 학번
     string name; // 이름
     string dept; // 학과
