@@ -1,5 +1,5 @@
 // BinaryTree.h
-#include "BinaryNode.h"
+#include "circularQueue.h"
 using namespace std;
 
 class BinaryTree {
@@ -14,7 +14,7 @@ public:
     bool isEmpty() { return (root == NULL); }
 
     void preorder() {
-        cout << "preorder  : ";
+        cout << "preorder   : ";
         preorder(root);
         cout << endl;
     }
@@ -26,7 +26,7 @@ public:
         preorder(node->getRight());
     }
     void inorder() {
-        cout << "inorder   : ";
+        cout << "inorder    : ";
         inorder(root);
         cout << endl;
     }
@@ -38,7 +38,7 @@ public:
         inorder(node->getRight());
     }
     void postorder() {
-        cout << "postorder : ";
+        cout << "postorder  : ";
         postorder(root);
         cout << endl;
     }
@@ -49,13 +49,28 @@ public:
         postorder(node->getRight());
         cout << "[" << node->getData() << "] ";
     }
-    // void levelorder() {
-    // }
+    void levelorder() {
+        CircularQueue queue;
+        if (root == NULL) return;
+        queue.enqueue(root);
+
+        cout << "levelorder : ";
+
+        while (!queue.isEmpty()) {
+            BinaryNode *curNode = queue.dequeue();
+            if (curNode == NULL) continue;
+
+            cout << "[" << curNode->getData() << "] ";
+            queue.enqueue(curNode->getLeft());
+            queue.enqueue(curNode->getRight());
+        }
+        cout << endl;
+    }
     void display() {
         preorder();
         inorder();
         postorder();
-        // levelorder();
+        levelorder();
     }
 
     // int getCount() {...}
