@@ -1,5 +1,6 @@
 // BinaryTree.h
 #include "circularQueue.h"
+#include <algorithm>
 using namespace std;
 
 class BinaryTree {
@@ -73,7 +74,31 @@ public:
         levelorder();
     }
 
-    // int getCount() {...}
-    // int getHeight() {...}
-    // int getLeafCount() {...}
+    int getCount() {
+        return isEmpty() ? 0 : getCount(root);
+    }
+    int getCount(BinaryNode *node) {
+        if (node == NULL) return 0;
+
+        return 1 + getCount(node->getLeft()) + getCount(node->getRight());
+    }
+
+    int getLeafCount() {
+        return isEmpty() ? 0 : getLeafCount(root);
+    }
+    int getLeafCount(BinaryNode *node) {
+        if (node == NULL) return 0;
+
+        if (node->isLeaf()) return 1;
+        else return getLeafCount(node->getLeft()) + getLeafCount(node->getRight());
+    }
+
+    int getHeight() {
+        return isEmpty() ? 0 : getHeight(root);
+    }
+    int getHeight(BinaryNode *node) {
+        if (node == NULL) return 0;
+
+        return 1 + max(getHeight(node->getLeft()), getHeight(node->getRight()));
+    }
 };

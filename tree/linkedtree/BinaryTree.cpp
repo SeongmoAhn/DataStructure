@@ -16,5 +16,9 @@ int main() {
 
     tree.display();
 
+    cout << endl << "tree node count      : " << tree.getCount() << endl;
+    cout << "tree leaf node count : " << tree.getLeafCount() << endl;
+    cout << "tree height          : " << tree.getHeight() << endl;
+
     return 0;
 }
