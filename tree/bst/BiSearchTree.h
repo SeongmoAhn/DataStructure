@@ -35,7 +35,8 @@ public:
     }
     
     void insert(BinaryNode *newNode) {
-        insert(root, newNode);
+        if (isEmpty()) root = newNode;
+        else insert(root, newNode);
     }
     void insert(BinaryNode *rootNode, BinaryNode *newNode) {
         if (newNode->getData() == rootNode->getData()) return ;
