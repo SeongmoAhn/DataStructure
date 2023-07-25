@@ -49,6 +49,6 @@ public:
         }
     }
    
-    // void remove(int data) {}
+    // void remove(int key) {}
     // void remove(BinaryNode *parent, BinaryNode *node) {}
 };

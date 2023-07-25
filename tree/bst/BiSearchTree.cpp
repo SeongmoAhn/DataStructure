@@ -15,6 +15,7 @@ int main() {
 
     tree.search(12);
     tree.search(100);
+    cout << endl;
 
     tree.search(9);
 
