@@ -7,8 +7,13 @@ public:
     ~BiSearchTree() {}
 
     BinaryNode *search(int key) {
-        // return searchRecur(root, key);
-        return searchIter(root, key);
+        BinaryNode *retNode = searchRecur(root, key);
+        // BinaryNode *retNode = searchIter(root, key);
+
+        if (retNode != NULL) cout << "key 값이 " << key << "인 노드 탐색 성공" << endl;
+        else cout << "key 값이 " << key << "인 노드 탐색 실패" << endl;
+
+        return retNode;
     }
     // 재귀로 구현
     BinaryNode *searchRecur(BinaryNode *node, int key) {

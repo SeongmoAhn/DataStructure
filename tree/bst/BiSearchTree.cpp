@@ -13,32 +13,23 @@ int main() {
     BinaryNode *A = new BinaryNode(18, B, C);
     tree.setRoot(A);
 
-    BinaryNode *keyNode = tree.search(12);
-    if (keyNode == NULL) cout << "key 12 value absence" << endl;
-    else cout << keyNode->getData() << " is detected"<< endl;
+    tree.search(12);
+    tree.search(100);
 
-    keyNode = tree.search(100);
-    if (keyNode == NULL) cout << "key 100 value absence" << endl;
-    else cout << keyNode->getData() << " is detected"<< endl;
-
-    keyNode = tree.search(9);
-    if (keyNode == NULL) cout << "key 9 value absence" << endl;
-    else cout << keyNode->getData() << " is detected"<< endl;
+    tree.search(9);
 
     BinaryNode *H = new BinaryNode(9, NULL, NULL);
     tree.insert(H);
 
-    keyNode = tree.search(9);
-    if (keyNode == NULL) cout << "key 9 value absence" << endl;
-    else cout << keyNode->getData() << " is detected"<< endl;
+    tree.search(9);
 
     return 0;
 }
 
 /*
 실행 결과 :
-12 is detected
-key 100 value absence
-key 9 value absence
-9 is detected
+key 값이 12인 노드 탐색 성공
+key 값이 100인 노드 탐색 실패
+key 값이 9인 노드 탐색 실패
+key 값이 9인 노드 탐색 성공
 */
