@@ -29,8 +29,20 @@ public:
         return NULL;
     }
     
-    // void insert(BinaryNode *node) {}
-    // void insert(BinaryNode *rootNode, BinaryNode *node) {}
+    void insert(BinaryNode *newNode) {
+        insert(root, newNode);
+    }
+    void insert(BinaryNode *rootNode, BinaryNode *newNode) {
+        if (newNode->getData() == rootNode->getData()) return ;
+        else if (newNode->getData() < rootNode->getData()) {
+            if (rootNode->getLeft() == NULL) rootNode->setLeft(newNode);
+            else insert(rootNode->getLeft(), newNode);
+        }
+        else {
+            if (rootNode->getRight() == NULL) rootNode->setRight(newNode);
+            else insert(rootNode->getRight(), newNode);
+        }
+    }
    
     // void remove(int data) {}
     // void remove(BinaryNode *parent, BinaryNode *node) {}

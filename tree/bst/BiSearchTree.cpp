@@ -21,6 +21,17 @@ int main() {
     if (keyNode == NULL) cout << "key 100 value absence" << endl;
     else cout << keyNode->getData() << " is detected"<< endl;
 
+    keyNode = tree.search(9);
+    if (keyNode == NULL) cout << "key 9 value absence" << endl;
+    else cout << keyNode->getData() << " is detected"<< endl;
+
+    BinaryNode *H = new BinaryNode(9, NULL, NULL);
+    tree.insert(H);
+
+    keyNode = tree.search(9);
+    if (keyNode == NULL) cout << "key 9 value absence" << endl;
+    else cout << keyNode->getData() << " is detected"<< endl;
+
     return 0;
 }
 
@@ -28,4 +39,6 @@ int main() {
 실행 결과 :
 12 is detected
 key 100 value absence
+key 9 value absence
+9 is detected
 */
