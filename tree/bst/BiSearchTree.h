@@ -50,6 +50,60 @@ public:
         }
     }
    
-    // void remove(int key) {}
-    // void remove(BinaryNode *parent, BinaryNode *node) {}
+    void remove(int key) {
+        if (isEmpty()) return ;
+
+        BinaryNode *parent = NULL;
+        BinaryNode *node = root;
+
+        while (node != NULL && node->getData() != key) {
+            parent = node;
+            node = (key < node->getData() ? node->getLeft() : node->getRight());
+        }
+
+        if (node == NULL) {
+            cout << "Error : key 값을 갖는 노드가 트리에 없음" << endl;
+            return ;
+        }
+        else remove(parent, node);
+    }
+    void remove(BinaryNode *parent, BinaryNode *node) {
+        if (node->isLeaf()) {
+            if (parent == NULL) root = NULL;
+            else {
+                if (parent->getLeft() == node)
+                    parent->setLeft(NULL);
+                else parent->setRight(NULL);
+            }
+        }
+        else if (node->getLeft() == NULL || node->getRight() == NULL) {
+            BinaryNode *child = 
+                (node->getLeft() != NULL ? node->getLeft() : node->getRight());
+
+            if (node == root) root = child;
+            else {
+                if (parent->getLeft() == node)
+                    parent->setLeft(child);
+                else parent->setRight(child);
+            }
+        }
+        else {
+            BinaryNode *reParent = node;
+            BinaryNode *replace = node->getRight();
+            while (replace->getLeft() != NULL) {
+                reParent = replace;
+                replace = replace->getLeft();
+            }
+
+            if (reParent->getLeft() == replace)
+                reParent->setLeft(replace->getRight());
+            else reParent->setRight(replace->getRight());
+
+            node->setData(replace->getData());
+
+            node = replace;
+        }
+
+        delete node;
+    }
 };

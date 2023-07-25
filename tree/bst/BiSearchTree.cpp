@@ -4,33 +4,32 @@
 int main() {
     BiSearchTree tree;
 
-    BinaryNode *G = new BinaryNode(27, NULL, NULL);
-    BinaryNode *F = new BinaryNode(31, G, NULL);
-    BinaryNode *E = new BinaryNode(12, NULL, NULL);
-    BinaryNode *D = new BinaryNode(3, NULL, NULL);
-    BinaryNode *C = new BinaryNode(26, NULL, F);
-    BinaryNode *B = new BinaryNode(7, D, E);
-    BinaryNode *A = new BinaryNode(18, B, C);
+    BinaryNode *A = new BinaryNode(35, NULL, NULL);
     tree.setRoot(A);
+    tree.insert(new BinaryNode(18, NULL, NULL));
+    tree.insert(new BinaryNode(68, NULL, NULL));
+    tree.insert(new BinaryNode(7, NULL, NULL));
+    tree.insert(new BinaryNode(26, NULL, NULL));
+    tree.insert(new BinaryNode(99, NULL, NULL));
+    tree.insert(new BinaryNode(3, NULL, NULL));
+    tree.insert(new BinaryNode(12, NULL, NULL));
+    tree.insert(new BinaryNode(22, NULL, NULL));
+    tree.insert(new BinaryNode(30, NULL, NULL));
 
-    tree.search(12);
-    tree.search(100);
-    cout << endl;
-
-    tree.search(9);
-
-    BinaryNode *H = new BinaryNode(9, NULL, NULL);
-    tree.insert(H);
-
-    tree.search(9);
+    tree.display(); cout << endl;
+    tree.remove(18);
+    tree.display();
 
     return 0;
 }
 
 /*
 실행 결과 :
-key 값이 12인 노드 탐색 성공
-key 값이 100인 노드 탐색 실패
-key 값이 9인 노드 탐색 실패
-key 값이 9인 노드 탐색 성공
+preorder   : [35] [18] [7] [3] [12] [26] [22] [30] [68] [99]
+inorder    : [3] [7] [12] [18] [22] [26] [30] [35] [68] [99]
+postorder  : [3] [12] [7] [22] [30] [26] [18] [99] [68] [35]
+
+preorder   : [35] [22] [7] [3] [12] [26] [30] [68] [99]
+inorder    : [3] [7] [12] [22] [26] [30] [35] [68] [99]
+postorder  : [3] [12] [7] [30] [26] [22] [99] [68] [35]
 */
