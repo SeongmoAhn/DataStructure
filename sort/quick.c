@@ -1,6 +1,6 @@
 // quick.c
 #include "array.h"
-#define SIZE 8
+#define SIZE 6
 #define MOD 100
 
 void quickSort(int arr[], int start, int end){
@@ -47,9 +47,9 @@ void quickSort(int arr[], int start, int end){
 }
 	
 int main() {
-    int arr[SIZE];
+    int arr[SIZE] = {3, 5, 4, 1, 2, 6};
 
-    getRandomArray(arr, SIZE, MOD);
+    // getRandomArray(arr, SIZE, MOD);
     printArray(arr, SIZE);
 
     quickSort(arr, 0, SIZE - 1);
