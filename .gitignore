@@ -1,3 +1,4 @@
+*
 a.out
 form
 makefile
@@ -8,4 +9,7 @@ b.*
 c.*
 test*
 input
+a.out
+!*.*
+!*/
 .DS_Store
