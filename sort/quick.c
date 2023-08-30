@@ -1,4 +1,4 @@
-// .c
+// quick.c
 #include "array.h"
 #define SIZE 8
 #define MOD 100
