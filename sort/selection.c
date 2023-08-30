@@ -11,6 +11,12 @@ void selectionSort(int arr[], int size) {
                 least = j;
         }
         swap(&arr[i], &arr[least]);
+#ifdef CHECK
+    for (int i = 0; i < SIZE; i++) {
+        printf("%2d ", arr[i]);
+    }
+    printf("\n");
+#endif
     }
 }
 
