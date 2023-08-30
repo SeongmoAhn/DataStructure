@@ -1,4 +1,4 @@
-// .c
+// merge.c
 #include "array.h"
 #define SIZE 20
 #define MOD 100
