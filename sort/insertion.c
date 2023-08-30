@@ -11,6 +11,12 @@ void insertionSort(int arr[], int size) {
             arr[idx + 1] = arr[idx];
         }
         arr[idx + 1] = key;
+#ifdef CHECK
+    for (int i = 0; i < SIZE; i++) {
+        printf("%3d", arr[i]);
+    }
+    printf("\n");
+#endif
     }
 }
 
