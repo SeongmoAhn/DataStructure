@@ -1,6 +1,6 @@
 // merge.c
 #include "array.h"
-#define SIZE 20
+#define SIZE 7
 #define MOD 100
 
 void merge(int arr[], int left, int mid, int right) {
@@ -38,9 +38,9 @@ void mergeSort(int arr[], int left, int right) {
 }
 
 int main() {
-    int arr[SIZE];
+    int arr[SIZE] = {6, 4, 3, 7, 5, 1,2};
 
-    getRandomArray(arr, SIZE, MOD);
+    // getRandomArray(arr, SIZE, MOD);
     printArray(arr, SIZE);
 
     mergeSort(arr, 0, SIZE - 1);
